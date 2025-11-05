@@ -1,0 +1,36 @@
+PROJE ADI: SEYAHAT HARİTASI UYGULAMASI (SEYAHAT_HARITASI_APP)
+
+TARİH: 2025-11-05
+GELİŞTİRME YÖNTEMİ: Adım Adım İnşa (Iterative Build)
+NİHAİ DURUM: TAMAMLANDI (APK OLUŞTURULDU)
+
+======================================================= PROJENİN AMACI VE ÖZELLİKLERİ
+
+Bu proje, bir dünya haritası üzerinde kullanıcının seyahat ettiği veya etmek istediği ülkeleri işaretlemesini ve bu ülkelere ait anıları (fotoğrafları) kaydetmesini sağlayan bir mobil uygulamadır.
+
+1.  ANA ÖZELLİK: HARİTA ÜZERİNDE İŞARETLEME VE GALERİ ERİŞİMİ
+    
+      - Harita: Flutter Map ve ArcGIS TileLayer kullanılarak dünya haritası görüntülendi.
+      - Marker Sistemi: Harita üzerine önceden belirlenmiş ülkelere (Türkiye, Almanya, ABD vb.) kırmızı noktalar (Marker) eklendi. Kullanıcı, bu noktalara tıklayarak ülkeye özel galeriye ulaşır.
+      - Dinamik Tıklama Çözümü: Haritada herhangi bir yere tıklayarak ülke adı bulma (GeoJSON ve GeoCoding) girişimleri, kütüphane uyumsuzlukları nedeniyle başarısız olmuş ve nihai projede, stabil çalışan 'Marker Sistemi'ne dönülmüştür.
+
+2.  RESİM/ANILIK YÖNETİMİ
+    
+      - Kayıt Yeri: Her ülke için, uygulamanın dahili depolama alanında o ülkenin adıyla benzersiz bir klasör oluşturulur (Örn: /seyahat_resimleri/turkiye).
+      - Resim Ekleme: Kullanıcı, mobil cihazının galerisinden resim seçerek bu ülkeye ait klasöre kopyalar ve kaydeder.
+      - Resim Görüntüleme: Ülke galerisinde kaydedilmiş tüm resimler, GridView (ızgara görünümü) ile listelenir.
+      - Tam Ekran: Hero animasyonu kullanılarak resimlere tıklanınca tam ekran önizleme sağlanır.
+
+3.  TEKNİK BİLEŞENLER
+    
+      - flutter_map (Harita)
+      - latlong2 (Koordinat Yönetimi)
+      - path_provider (Dosya Yolu Yönetimi)
+      - image_picker (Resim Galerisi Erişimi)
+      - path (Dosya Yolu Birleştirme)
+
+======================================================= NİHAİ DURUM VE NOTLAR
+
+  - Proje, tüm temel işlevleri (Harita, İşaretleme, Galeri, Kayıt) tam ve hatasız bir şekilde yerine getirmektedir.
+  - lib/main.dart dosyası projenin tamamını içermektedir.
+  - Projenin son hali git push komutu ile GitHub'a kaydedilmiş ve test için flutter build apk --release komutuyla APK sürümü oluşturulmuştur.
